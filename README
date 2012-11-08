@@ -11,6 +11,7 @@ this:
     import threetaps.api.clients
     import threetaps.api.models
 
+You need to set the AUTH_TOKEN constant in threetaps.api.base.constants.py.
 
 Pre-Requisites
 --------------
