@@ -1,5 +1,5 @@
 
-<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html><head><title>Python: module threetaps.api.clients.searchAPIClient</title>
 </head><body bgcolor="#f0f0f8">
 
@@ -8,7 +8,7 @@
 <td valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="threetaps.html"><font color="#ffffff">threetaps</font></a>.<a href="threetaps.api.html"><font color="#ffffff">api</font></a>.<a href="threetaps.api.clients.html"><font color="#ffffff">clients</font></a>.searchAPIClient</strong></big></big></font></td
 ><td align=right valign=bottom
-><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/erik/Development/pythonAPIWrapper/threetaps/api/clients/searchAPIClient.py">/Users/erik/Development/pythonAPIWrapper/threetaps/api/clients/searchAPIClient.py</a></font></td></tr></table>
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Volumes/Data/3taps/python/3taps-Python-Client/threetaps/api/clients/searchAPIClient.py">/Volumes/Data/3taps/python/3taps-Python-Client/threetaps/api/clients/searchAPIClient.py</a></font></td></tr></table>
     <p><tt>threetaps.api.clients.searchAPIClient<br>
 &nbsp;<br>
 This&nbsp;Python&nbsp;module&nbsp;implements&nbsp;the&nbsp;3taps&nbsp;Search&nbsp;API&nbsp;client&nbsp;object.</tt></p>
@@ -47,31 +47,13 @@ This&nbsp;Python&nbsp;module&nbsp;implements&nbsp;the&nbsp;3taps&nbsp;Search&nbs
 <td colspan=2><tt>A&nbsp;client&nbsp;for&nbsp;the&nbsp;3taps&nbsp;Search&nbsp;API.<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%">Methods defined here:<br>
-<dl><dt><a name="SearchAPIClient-bestMatch"><strong>bestMatch</strong></a>(self, keywords)</dt><dd><tt>Calculate&nbsp;the&nbsp;3taps&nbsp;category&nbsp;that&nbsp;best&nbsp;matches&nbsp;a&nbsp;set&nbsp;of&nbsp;keywords.<br>
-&nbsp;<br>
-'keywords'&nbsp;should&nbsp;be&nbsp;a&nbsp;list&nbsp;of&nbsp;strings&nbsp;containing&nbsp;keywords&nbsp;that&nbsp;we<br>
-want&nbsp;to&nbsp;find&nbsp;the&nbsp;best&nbsp;match&nbsp;for.&nbsp;&nbsp;We&nbsp;ask&nbsp;the&nbsp;3taps&nbsp;server&nbsp;to<br>
-identify&nbsp;the&nbsp;category&nbsp;which&nbsp;best&nbsp;matches&nbsp;those&nbsp;keywords.<br>
-&nbsp;<br>
-Upon&nbsp;completion,&nbsp;we&nbsp;return&nbsp;a&nbsp;dictionary&nbsp;with&nbsp;the&nbsp;following&nbsp;entries:<br>
-&nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;category<br>
-&nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;category&nbsp;code&nbsp;which&nbsp;best&nbsp;matches&nbsp;the&nbsp;given&nbsp;keywords.<br>
-&nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;numResults<br>
-&nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;number&nbsp;of&nbsp;postings&nbsp;which&nbsp;belong&nbsp;to&nbsp;that&nbsp;category.<br>
-&nbsp;<br>
-Note&nbsp;that&nbsp;if&nbsp;an&nbsp;error&nbsp;occurs,&nbsp;we&nbsp;return&nbsp;None.</tt></dd></dl>
-
 <dl><dt><a name="SearchAPIClient-count"><strong>count</strong></a>(self, query)</dt><dd><tt>Calculate&nbsp;the&nbsp;number&nbsp;of&nbsp;postings&nbsp;which&nbsp;match&nbsp;a&nbsp;given&nbsp;search&nbsp;query.<br>
 &nbsp;<br>
 'query'&nbsp;is&nbsp;a&nbsp;<a href="#SearchQuery">SearchQuery</a>&nbsp;object&nbsp;defining&nbsp;the&nbsp;parameters&nbsp;of&nbsp;a<br>
 search.&nbsp;&nbsp;We&nbsp;return&nbsp;the&nbsp;number&nbsp;of&nbsp;postings&nbsp;which&nbsp;match&nbsp;that&nbsp;search<br>
 query,&nbsp;or&nbsp;None&nbsp;if&nbsp;the&nbsp;server&nbsp;cannot&nbsp;be&nbsp;contacted.</tt></dd></dl>
 
-<dl><dt><a name="SearchAPIClient-range"><strong>range</strong></a>(self, query, fields)</dt><dd><tt>Calculate&nbsp;the&nbsp;minimum&nbsp;and&nbsp;maximum&nbsp;field&nbsp;values&nbsp;for&nbsp;a&nbsp;search.<br>
+<dl><dt><a name="SearchAPIClient-range"><strong>range</strong></a>(self, query, fields)</dt><dd><tt>Calculate&nbsp;the&nbsp;minimum&nbsp;and&nbsp;maximum&nbsp;values&nbsp;for&nbsp;a&nbsp;given&nbsp;search&nbsp;query.<br>
 &nbsp;<br>
 The&nbsp;parameters&nbsp;are&nbsp;as&nbsp;follows:<br>
 &nbsp;<br>
@@ -206,7 +188,7 @@ contacted),&nbsp;we&nbsp;return&nbsp;None.</tt></dd></dl>
 
 <hr>
 Methods inherited from <a href="threetaps.api.base.apiClient.html#APIClient">threetaps.api.base.apiClient.APIClient</a>:<br>
-<dl><dt><a name="SearchAPIClient-__init__"><strong>__init__</strong></a>(self, url<font color="#909090">='http://3taps.net'</font>, port<font color="#909090">=80</font>)</dt><dd><tt>Standard&nbsp;initializer.<br>
+<dl><dt><a name="SearchAPIClient-__init__"><strong>__init__</strong></a>(self, url<font color="#909090">='http://3taps.net'</font>, port<font color="#909090">=80</font>, authToken<font color="#909090">='75c8e3851e874fe692a8199022a06645'</font>)</dt><dd><tt>Standard&nbsp;initializer.<br>
 &nbsp;<br>
 The&nbsp;API&nbsp;client&nbsp;will&nbsp;use&nbsp;the&nbsp;given&nbsp;URL&nbsp;and&nbsp;HTTP&nbsp;port&nbsp;to&nbsp;access&nbsp;the<br>
 3taps&nbsp;APIs.</tt></dd></dl>
@@ -269,7 +251,7 @@ A&nbsp;<a href="#SearchQuery">SearchQuery</a>&nbsp;object&nbsp;can&nbsp;have&nbs
 &nbsp;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;source<br>
 &nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;5-characgter&nbsp;source&nbsp;code&nbsp;a&nbsp;posting&nbsp;must&nbsp;have&nbsp;if&nbsp;it&nbsp;is&nbsp;to&nbsp;be<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;5-character&nbsp;source&nbsp;code&nbsp;a&nbsp;posting&nbsp;must&nbsp;have&nbsp;if&nbsp;it&nbsp;is&nbsp;to&nbsp;be<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;included&nbsp;in&nbsp;the&nbsp;list&nbsp;of&nbsp;search&nbsp;results.<br>
 &nbsp;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;category<br>
@@ -304,7 +286,7 @@ A&nbsp;<a href="#SearchQuery">SearchQuery</a>&nbsp;object&nbsp;can&nbsp;have&nbs
 &nbsp;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;externalID<br>
 &nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;string&nbsp;which&nbsp;must&nbsp;match&nbsp;the&nbsp;"externalID"&nbsp;field&nbsp;for&nbsp;a&nbsp;postig<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;string&nbsp;which&nbsp;must&nbsp;match&nbsp;the&nbsp;"externalID"&nbsp;field&nbsp;for&nbsp;a&nbsp;posting<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;it&nbsp;is&nbsp;to&nbsp;be&nbsp;included&nbsp;in&nbsp;the&nbsp;list&nbsp;of&nbsp;search&nbsp;results.<br>
 &nbsp;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;start<br>

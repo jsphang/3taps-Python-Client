@@ -230,34 +230,6 @@ class SearchAPIClient(APIClient):
         return results['count']
 
 
-    def bestMatch(self, keywords):
-        """ Calculate the 3taps category that best matches a set of keywords.
-
-            'keywords' should be a list of strings containing keywords that we
-            want to find the best match for.  We ask the 3taps server to
-            identify the category which best matches those keywords.
-
-            Upon completion, we return a dictionary with the following entries:
-
-                category
-
-                    The category code which best matches the given keywords.
-
-                numResults
-
-                    The number of postings which belong to that category.
-
-            Note that if an error occurs, we return None.
-        """
-        response = self.sendRequest("search/bestMatch",
-                                    keywords=",".join(keywords))
-
-        if (response == None) or (response['status'] != 200):
-            return None
-
-        results = json.loads(response['contents'])
-        return results
-
     # =====================
     # == PRIVATE METHODS ==
     # =====================
@@ -282,15 +254,13 @@ class SearchAPIClient(APIClient):
         if query.text != None:
             params['text'] = urllib.quote_plus(query.text)
         if query.externalID != None:
-            params['externalID'] = query.externalID
+            params['sourceId'] = query.externalID
         if query.start != None:
             params['start'] = query.start.strftime("%Y/%m/%d %H:%M:%S UTC")
         if query.end != None:
             params['end'] = query.end.strftime("%Y/%m/%d %H:%M:%S UTC")
         if query.annotations != None:
             params['annotations'] = json.dumps(query.annotations)
-        if query.trustedAnnotations != None:
-            params['trustedAnnotations'] = json.dumps(query.trustedAnnotations)
         return params
 
 #############################################################################

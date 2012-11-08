@@ -7,24 +7,32 @@
 class Category:
     """ The Category class represents a category within the 3taps client APIs.
 
-        A Category object has the following attributes:
+        The following snippet illustrates part of the reference API categories
+        response; the top-level Category classes (in this case, Animals) are
+        represented by the 3taps Python client library as Category instances
+        with Category "children" (i.e., Pets, Supplies, and Other each a child
+        of the Animals Category):
 
-            code
-
-                A brief string uniquely identifying this category.
-
-            group
-
-                A string identifying the group this Category belongs to.
-
-            name
-
-                A string containing the name of this category.
-
-            annotations
-
-                A list of Annotation objects for the annotations associated
-                with this category.
+            [
+              {
+                "categoryClassName": "Animals",
+                "categoryClass": "AAAA",
+                "categories":
+                [
+                  {
+                    "category": "APET",
+                    "categoryName": "Pets"
+                  },
+                  {
+                    "category": "ASUP",
+                    "categoryName": "Supplies"
+                  },
+                  {
+                    "category": "AOTH",
+                    "categoryName": "Other"
+                  }
+                ]
+              },
 
         You can retrieve and change these attributes directly as required.
     """
@@ -34,8 +42,21 @@ class Category:
             The initial attributes for the Category object can be passed as
             keyword arguments if desired.
         """
-        self.code        = kwargs.get("code")
-        self.group       = kwargs.get("group")
-        self.name        = kwargs.get("name")
-        self.annotations = kwargs.get("annotations", [])
+        self.code = kwargs.get("categoryClass")
+        if self.code is None:
+            self.isCategoryClass = False
+
+            self.code = kwargs.get("category")
+            self.name = kwargs.get("categoryName")
+        else:
+            ## top-level category class
+            self.isCategoryClass = True
+            self.children = []
+
+            self.code = kwargs.get("categoryClass")
+            self.name = kwargs.get("categoryClassName")
+
+            children = kwargs.get("categories")
+            for child in children:
+                self.children.append(Category(**child))
 

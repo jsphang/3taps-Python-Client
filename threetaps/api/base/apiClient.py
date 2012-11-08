@@ -15,7 +15,8 @@ class APIClient:
         All of our API client objects are derived from this base class.
     """
     def __init__(self, url=constants.DEFAULT_API_URL,
-                       port=constants.DEFAULT_API_PORT):
+                       port=constants.DEFAULT_API_PORT,
+                       authToken=constants.AUTH_TOKEN):
         """ Standard initializer.
 
             The API client will use the given URL and HTTP port to access the
@@ -23,6 +24,7 @@ class APIClient:
         """
         self._url         = url
         self._port        = port
+        self._authToken   = authToken
         self._logRequests = False
 
 
@@ -83,6 +85,8 @@ class APIClient:
         url = self._url + ":" + str(self._port) + "/" + endpoint
 
         postData = None # initially.
+
+        params["authToken"] = self._authToken
 
         if type == "GET":
             if len(params) > 0:

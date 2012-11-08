@@ -29,68 +29,37 @@ class SearchAPIClientTestCase(unittest.TestCase):
     def testSearch(self):
         """ Test the SearchClient.search() API call
         """
-        query = clients.SearchQuery(source="CRAIG", location="SFO",
-                                    text="bike")
+        query = clients.SearchQuery(source="CRAIG", text="bike")
 
         response = self._api.search(query)
 
-        assert response != None
+        assert response is not None
         assert response['success'] == True
         assert len(response['results']) > 0
         assert len(response['results']) <= response['numResults']
 
 
-    def testRange(self):
-        """ Test the SearchClient.range() API call
-        """
-        query = clients.SearchQuery(source="CRAIG", location="SFO",
-                                    text="bike")
-
-        response = self._api.range(query, ["price"])
-
-        assert response != None
-        assert "price" in response
-        assert response['price'] != None
-        minValue,maxValue = response['price']
-        assert minValue != None
-        assert maxValue != None
-        assert minValue <= maxValue
-
-
     def testSummary(self):
         """ Test the SearchClient.summary() API call
         """
-        query = clients.SearchQuery(source="CRAIG", location="SFO",
-                                    text="bike")
+        query = clients.SearchQuery(source="CRAIG", text="bike")
         
         response = self._api.summary(query, "category")
 
-        assert response != None
+        assert response is not None
         assert len(response['totals']) > 0
 
 
     def testCount(self):
         """ Test the SearchClient.count() API call
         """
-        query = clients.SearchQuery(source="CRAIG", location="SFO",
-                                    text="bike")
+        query = clients.SearchQuery(source="CRAIG", text="bike")
         
         total = self._api.count(query)
 
-        assert total != None
+        assert total is not None
         assert total > 0
 
-
-    def testBestMatch(self):
-        """ Test the SearchClient.bestMatch() API call
-        """
-        response = self._api.bestMatch(["iPad"])
-
-        assert response != None
-        assert "category" in response
-        assert response['category'] == "SCOM"
-        assert "numResults" in response
-        assert response['numResults'] > 0
 
 #############################################################################
 

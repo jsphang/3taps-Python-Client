@@ -1,5 +1,5 @@
 
-<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html><head><title>Python: module threetaps.api.models.category</title>
 </head><body bgcolor="#f0f0f8">
 
@@ -8,7 +8,7 @@
 <td valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="threetaps.html"><font color="#ffffff">threetaps</font></a>.<a href="threetaps.api.html"><font color="#ffffff">api</font></a>.<a href="threetaps.api.models.html"><font color="#ffffff">models</font></a>.category</strong></big></big></font></td
 ><td align=right valign=bottom
-><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/erik/Development/pythonAPIWrapper/threetaps/api/models/category.py">/Users/erik/Development/pythonAPIWrapper/threetaps/api/models/category.py</a></font></td></tr></table>
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Volumes/Data/3taps/python/3taps-Python-Client/threetaps/api/models/category.py">/Volumes/Data/3taps/python/3taps-Python-Client/threetaps/api/models/category.py</a></font></td></tr></table>
     <p><tt>threetaps.api.models.category<br>
 &nbsp;<br>
 This&nbsp;Python&nbsp;module&nbsp;implements&nbsp;the&nbsp;<a href="#Category">Category</a>&nbsp;model&nbsp;object.</tt></p>
@@ -31,24 +31,32 @@ This&nbsp;Python&nbsp;module&nbsp;implements&nbsp;the&nbsp;<a href="#Category">C
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
 <td colspan=2><tt>The&nbsp;<a href="#Category">Category</a>&nbsp;class&nbsp;represents&nbsp;a&nbsp;category&nbsp;within&nbsp;the&nbsp;3taps&nbsp;client&nbsp;APIs.<br>
 &nbsp;<br>
-A&nbsp;<a href="#Category">Category</a>&nbsp;object&nbsp;has&nbsp;the&nbsp;following&nbsp;attributes:<br>
+The&nbsp;following&nbsp;snippet&nbsp;illustrates&nbsp;part&nbsp;of&nbsp;the&nbsp;reference&nbsp;API&nbsp;categories<br>
+response;&nbsp;the&nbsp;top-level&nbsp;<a href="#Category">Category</a>&nbsp;classes&nbsp;(in&nbsp;this&nbsp;case,&nbsp;Animals)&nbsp;are<br>
+represented&nbsp;by&nbsp;the&nbsp;3taps&nbsp;Python&nbsp;client&nbsp;library&nbsp;as&nbsp;<a href="#Category">Category</a>&nbsp;instances<br>
+with&nbsp;<a href="#Category">Category</a>&nbsp;"children"&nbsp;(i.e.,&nbsp;Pets,&nbsp;Supplies,&nbsp;and&nbsp;Other&nbsp;each&nbsp;a&nbsp;child<br>
+of&nbsp;the&nbsp;Animals&nbsp;<a href="#Category">Category</a>):<br>
 &nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;code<br>
-&nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;brief&nbsp;string&nbsp;uniquely&nbsp;identifying&nbsp;this&nbsp;category.<br>
-&nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;group<br>
-&nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;string&nbsp;identifying&nbsp;the&nbsp;group&nbsp;this&nbsp;<a href="#Category">Category</a>&nbsp;belongs&nbsp;to.<br>
-&nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;name<br>
-&nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;string&nbsp;containing&nbsp;the&nbsp;name&nbsp;of&nbsp;this&nbsp;category.<br>
-&nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;annotations<br>
-&nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;list&nbsp;of&nbsp;Annotation&nbsp;objects&nbsp;for&nbsp;the&nbsp;annotations&nbsp;associated<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with&nbsp;this&nbsp;category.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryClassName":&nbsp;"Animals",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryClass":&nbsp;"AAAA",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categories":<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"category":&nbsp;"APET",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryName":&nbsp;"Pets"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"category":&nbsp;"ASUP",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryName":&nbsp;"Supplies"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"category":&nbsp;"AOTH",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"categoryName":&nbsp;"Other"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
 &nbsp;<br>
 You&nbsp;can&nbsp;retrieve&nbsp;and&nbsp;change&nbsp;these&nbsp;attributes&nbsp;directly&nbsp;as&nbsp;required.<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
